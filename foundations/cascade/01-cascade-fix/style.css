@@ -8,7 +8,14 @@ body {
   font-weight: 800;
 }
 
-.small-para {
+/* 
+small-para and para are class with same specificity 
+put para after small para will make para work only
+so the font size is 22px instead of 14px
+can change the location of block or more class to fix it
+*/
+
+.small-para.para {
   font-size: 14px;
   font-weight: 800;
 }
@@ -17,7 +24,13 @@ body {
   font-size: 22px;
 }
 
-.confirm {
+/* 
+confirm and button are class
+put button later will make button work only
+can use id or more class to fix it
+*/
+
+#confirm-button {
   background: green;
   color: white;
   font-weight: bold;
@@ -29,7 +42,12 @@ body {
   font-size: 20px;
 }
 
-.child {
+/* 
+div.text is more specific than .child
+use id /combinator with parent class instead
+*/
+
+.text .child {
   color: rgb(0, 0, 0);
   font-weight: 800;
   font-size: 14px;
