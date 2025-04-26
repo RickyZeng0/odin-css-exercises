@@ -1,0 +1,22 @@
+.default {
+    background-color: rgb(255, 183, 225);
+    font-family: Verdana,"DegaVu Sans",sans-serif;
+}
+
+/* the effect of css can be summed up */
+/* can use .cooler . And then total efffect = default + cooler */
+.default.cooler {
+    font-size:24px;
+}
+
+#number-2 {
+    color:#0000ff;
+    font-size: 36px;
+}
+
+#number-4 {
+    background-color: hsl(120, 100%, 69%);
+    font-weight:bold;
+    /* or can reuse the default class to reduce the code */
+    font-size:24px;
+}
