@@ -7,21 +7,87 @@ body {
   width: 400px;
   background: #fff;
   margin: 16px auto;
+  padding: 8px;
 }
+
+/* 
+This will not work as margin is used to seperate element
+There is no 8px between the top and bottom edge 
+of the cardand its content 
+as there are no elements above and below the card
+
+.title,.content,.button-container{
+  margin: 8px;
+
+} 
+  */
 
 .title {
   background: #e3f4ff;
+  font-size: 16px;
+  margin-bottom: 8px;
+  padding-left: 8px;
 }
 
 .content {
   background: #e3f4ff;
+  margin-bottom: 8px;
+  padding: 16px 8px;
 }
+
+/* 
+can't so padding to zero to let content center
+text align only work for text but not button
+*/
 
 .button-container {
   background: #e3f4ff;
+  padding: 8px 0;
+  text-align: center;
 }
 
 button {
   background: white;
   border: 1px solid #eee;
+  display: block;
+  padding: 8px 24px;
+  margin: 0px auto;
 }
+
+
+/* 
+It works because the block take entire width 
+because it inheri from paraent div and we 
+do not specifi the width 
+so it can be center as text-align but no use for auto
+as the content box take all the spaces , there is no room 
+for margin 
+
+span {
+display: block;
+text-align: center; 
+margin:0 auto;
+}
+
+It fail becasue inlince only take some space 
+there is no text-align .
+Inline ignore all effect of margin and height and width 
+so margin auto will not work
+
+span {
+display: inline;
+text-align: center; 
+margin:0 auto;
+}
+
+span selector beat .button-container as span is directly addressing
+while .button-container is parent class
+Sometime it works because the property is not conflict 
+
+Change the size of block then work
+span {
+  display: block;
+  width: 55px;
+  margin:0 auto;
+} 
+*/
