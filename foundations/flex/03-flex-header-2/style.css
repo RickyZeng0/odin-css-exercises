@@ -2,6 +2,11 @@
 you'll learn about it later. */
 @import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;1,900&display=swap');
 
+/* README.md is misleading 
+Actually not only use flex , can use padding and margin
+only the edge is 8px , other items are 16px
+nested flex container and justify-content: space-between */
+
 body {
   margin: 0;
   background: #eee;
@@ -12,6 +17,14 @@ body {
   background: white;
   border-bottom: 1px solid #ddd;
   box-shadow: 0 0 8px rgba(0,0,0,.1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* start ,middle ,end is empty div to expand in order to push other thing to two sides */
+.empty {
+  flex:auto
 }
 
 .profile-image {
@@ -45,4 +58,6 @@ a {
 
 ul {
   list-style-type: none;
+  display: flex;
+  gap: 16px;
 }
