@@ -3,8 +3,16 @@
   padding: 0;
 }
 
+li {
+  /* we don't want any dot infront of the list */
+  list-style: none;
+}
+
 .container {
   text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 4px;
 }
 
 .container div {
@@ -17,6 +25,19 @@
 
 .header {
   background-color: #393f4d;
+  grid-column: 1 / 3;
+  display: grid;
+  /* use parent grid line to seperate logo and links 
+  or actually we don't have to follow the parent so we don't need margin*/
+  grid-template-columns: subgrid;
+  /* from the spective of ul container , everything is centered. 
+  The only thing that is not centered is the menu. So we need the header container */
+  align-items: center;
+}
+
+.logo{
+  /* move logo to the left */
+  justify-self: start;
 }
 
 .menu ul,
@@ -24,8 +45,22 @@
   font-size: 16px;
 }
 
+
+.menu ul{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  /* ul is not header grid item so changing the margin won't affect the grid line */
+  margin-left: 18%;
+}
+
+
 .sidebar {
   background-color: #C50208;
+  grid-row: 2 / span 2;
+  /* Only one col so no need to set other things */
+  display: grid;
+  gap: 50px;
+  align-items: center;
 }
 
 .sidebar .photo {
@@ -48,6 +83,11 @@
   background-color: #C50208;
 }
 
+.nav ul{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+
 .nav ul li {
   font-size: 16px;
   text-transform: uppercase;
@@ -55,6 +95,10 @@
 
 .article {
   background-color: #bccbde;
+  display: grid;
+  /* as it is dynamic, we don't know how many rows, so we just specfic the colunm */
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 15px;
 }
 
 .article p {
@@ -83,6 +127,7 @@
 
 .footer {
   background-color: #393f4d;
+  grid-column: 1 / 3;
 }
 
 .footer p {
